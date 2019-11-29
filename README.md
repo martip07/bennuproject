@@ -4,14 +4,14 @@ Repositorio para las pruebas de bennu.
 ## Lista de actividades:
 
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
-- [] Provisionar docker-engine con ansible en tu máquina virtual creada
-- [] Desplegar el container de kong-ce sobre la máquina virtual.
-- [] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego:
+- [ ] Provisionar docker-engine con ansible en tu máquina virtual creada
+- [ ] Desplegar el container de kong-ce sobre la máquina virtual.
+- [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego:
 <ul>
-- [] Dockerizar la aplicación
-- [] Crear una api en kong que haga una llamada a el servicio.
+- [ ] Dockerizar la aplicación
+- [ ] Crear una api en kong que haga una llamada a el servicio.
 </ul>
-- [] Hacer un script que ejecute los cuatro puntos anteriores.
+- [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
 ### Crear una máquina virtual con terraform sobre el free tier de AWS.
 
