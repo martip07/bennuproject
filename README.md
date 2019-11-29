@@ -3,14 +3,50 @@ Repositorio para las pruebas de bennu.
 
 ## Lista de actividades:
 
-<ol>
-<li>Crear una máquina virtual con terraform sobre el free tier de AWS.</li>
-<li>Provisionar docker-engine con ansible en tu máquina virtual creada.</li>
-<li>Desplegar el container de kong-ce sobre la máquina virtual.</li>
-<li>Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego:</li>
+- [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
+- [ ] Provisionar docker-engine con ansible en tu máquina virtual creada
+- [ ] Desplegar el container de kong-ce sobre la máquina virtual.
+- [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
+- [ ] Hacer un script que ejecute los cuatro puntos anteriores.
+
+### Crear una máquina virtual con terraform sobre el free tier de AWS.
+
+#### Requerimientos:
+
 <ul>
-<li>Dockerizar la aplicación</li>
-<li>Crear una api en kong que haga una llamada a el servicio.</li>
+<li>ACCESS y SECRET KEY de una cuenta en AWS</li>
+<li>IAM User debe tener permisos en EC2</li>
+<li>Disponer de terraform localmente</li>
 </ul>
-<li>Hacer un script que ejecute los cuatro puntos anteriores.</li>
+
+#### Variables de entorno:
+
+<ul>
+<li><code>export TF_VAR_aws_ak="AWS ACCESS KEY"</code></li>
+<li><code>export TF_VAR_aws_sk="AWS SECRET KEY"</code></li>
+<li><code>export TF_VAR_aws_region="AWS REGION"</code></li>
+<li><code>export TF_VAR_ec2_ami_id="AWS AMI ID"</code></li>
+</ul>
+
+> Para el tema de AMI, se sugiere usar: ami-0a7d051a1c4b54f65 (Ubuntu 18.04)
+
+#### Pasos a seguir:
+
+> Si solo se quiere ejecutar esta actividad se tiene que usar esta rama.
+
+<ol>
+<li>Clonar repositorio y usar rama task-terraform</li>
+<li>Configurar varaibles de Entorno</li>
+<li>Ejecutar: </li>
+<ul>
+<li>terraform plan</li>
+<li>terraform apply</li>
+<li>terraform destroy - Para eliminar todos los recursos que se crearon</li>
+</ul>
 </ol>
+
+#### Verificar:
+
+Si todo se ejecuto correctamente se va a tener un output parecido a:
+
+![Drag Racing](https://minecraftbox-extras.s3.amazonaws.com/output-task-1.png)
