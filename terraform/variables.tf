@@ -17,3 +17,13 @@ variable "ec2_ami_id" {
   type        = string
   description = "Variable en la que se define el AMI ID"
 }
+
+variable "ec2_key_pub" {
+  type        = string
+  description = "Variable en la que se define la llave publica"
+}
+
+variable "ec2_key_priv" {
+  type        = string
+  description = "Variable en la que se define la llave privada"
+}

@@ -10,6 +10,14 @@ resource "aws_security_group" "sg_general" {
     description = "Rule for SSH conections"
   }
 
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Egress for everything"
+  }
+
   tags = {
     Name = "sg_general_uat"
     Env  = "uat"

@@ -1,0 +1,13 @@
+---
+#main.yml: server dependencies and extras.
+  - name: Actualizar cache de paquetes
+    apt:
+      update_cache: yes
+  - name: Instalar paquetes necesarios para docker-ce
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "curl"
