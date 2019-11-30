@@ -4,4 +4,4 @@
   connection: local
   roles:
     - server_dependencies
-    #- docker_provision
+    - docker_provision
