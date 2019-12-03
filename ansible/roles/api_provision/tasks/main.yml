@@ -1,0 +1,20 @@
+---
+#main.yml: api provisions tasks.
+  - name: Add apigo service to kong
+    uri:
+      url: http://localhost:9001/services/
+      method: POST
+      body_format: form-urlencoded
+      body:
+        name: apigo-service
+        url: http://apigo:8088/api/hello
+      status_code: 201
+  - name: Add apigo route to kong
+    uri:
+      url: http://localhost:9001/services/apigo-service/routes
+      method: POST
+      body_format: form-urlencoded
+      body:
+        hosts: []
+        paths: ['/api/hello']
+      status_code: 201
