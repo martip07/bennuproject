@@ -9,9 +9,9 @@ Repositorio para las pruebas de bennu.
 - [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
-### Crear una máquina virtual con terraform sobre el free tier de AWS.
+### Pasos para la actividad 1.
 
-#### Requerimientos:
+##### Requerimientos:
 
 <ul>
 <li>Instalar Terraform</li>
@@ -20,7 +20,7 @@ Repositorio para las pruebas de bennu.
 <li>IAM User debe tener permisos en EC2</li>
 </ul>
 
-#### Variables de entorno:
+##### Variables de entorno:
 
 <ul>
 <li><code>export TF_VAR_aws_ak="AWS ACCESS KEY"</code></li>
