@@ -69,18 +69,18 @@ Si todo se ejecuto correctamente se va a tener un output parecido a:
 
 ![Drag Racing](https://minecraftbox-extras.s3.amazonaws.com/output-task-1.png)
 
-> Pasos para la actividad 3 (Docker kong-ce)
+### Pasos para la actividad 3 (Docker kong-ce)
 
 Se repite lo mismo que en la actividad 1 - 2 solo que ahora se agregan uno pasos y requerimientos adicionales.
 *(No tienen que usar el comando terraform destroy ya que se van a necesitar los recursos creados).*
 
-###### Requerimientos:
+##### Requerimientos:
 
 <ul>
 <li>Instalar AWS CLI</li>
 </ul>
 
-###### Variables de entorno:
+##### Variables de entorno:
 
 <ul>
 <li><code>export AWS_ACCESS_KEY_ID=$TF_VAR_aws_ak</code></li>
@@ -90,7 +90,7 @@ Se repite lo mismo que en la actividad 1 - 2 solo que ahora se agregan uno pasos
 
 En estas nuevas variables de entorno solo se asignan los varoles previamente asignado a las variables que se usaron para Terraform.
 
-###### Pasos a seguir:
+##### Pasos a seguir:
 
 <ol>
 <li>ansible-playbook ./infrafacts.yml -v</li>
