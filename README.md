@@ -4,7 +4,7 @@ Repositorio para las pruebas de bennu.
 ## Lista de actividades:
 
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
-- [ ] Provisionar docker-engine con ansible en tu máquina virtual creada
+- [x] Provisionar docker-engine con ansible en tu máquina virtual creada
 - [ ] Desplegar el container de kong-ce sobre la máquina virtual.
 - [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
@@ -14,9 +14,10 @@ Repositorio para las pruebas de bennu.
 #### Requerimientos:
 
 <ul>
+<li>Instalar Terraform</li>
+<li>Instalar Ansible</li>
 <li>ACCESS y SECRET KEY de una cuenta en AWS</li>
 <li>IAM User debe tener permisos en EC2</li>
-<li>Disponer de terraform localmente</li>
 </ul>
 
 #### Variables de entorno:
@@ -25,25 +26,33 @@ Repositorio para las pruebas de bennu.
 <li><code>export TF_VAR_aws_ak="AWS ACCESS KEY"</code></li>
 <li><code>export TF_VAR_aws_sk="AWS SECRET KEY"</code></li>
 <li><code>export TF_VAR_aws_region="AWS REGION"</code></li>
+<li><code>export TF_VAR_ec2_name="AWS SERVER NAME"</code></li>
 <li><code>export TF_VAR_ec2_ami_id="AWS AMI ID"</code></li>
+<li><code>export TF_VAR_ec2_sg_name="AWS SECURITY GROUP NAME"</code></li>
 </ul>
 
 > Para el tema de AMI, se sugiere usar: ami-0a7d051a1c4b54f65 (Ubuntu 18.04)
 
 #### Pasos a seguir:
 
-> Si solo se quiere ejecutar esta actividad se tiene que usar esta rama.
+> Si solo se quiere ejecutar esta actividad 1 (Terraform)
 
 <ol>
-<li>Clonar repositorio y usar rama task-terraform</li>
-<li>Configurar varaibles de Entorno</li>
+<li>Clonar repositorio</li>
+<li>Configurar variables de Entorno</li>
+<li>Ingresar al directorio terraform</li>
 <li>Ejecutar: </li>
 <ul>
+<li>terraform init</li>
 <li>terraform plan</li>
 <li>terraform apply</li>
 <li>terraform destroy - Para eliminar todos los recursos que se crearon</li>
 </ul>
 </ol>
+
+> Si solo se quiere ejecutar esta actividad 2 (Ansible)
+
+Son los mismos pasos que se ejecutaron para la primera actividad ya que solo se usa Ansible para instalar y configurar Docker.
 
 #### Verificar:
 

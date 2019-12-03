@@ -19,6 +19,15 @@
     apt:
       name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
       state: present
+  - name: Instalar pip
+    become: yes
+    apt:
+      name: ['python-pip']
+      state: present
+  - name: Instalar modulo de python para Docker
+    become: yes
+    pip:
+      name: docker
   - name: Eliminar cache
     become: yes
     apt:
