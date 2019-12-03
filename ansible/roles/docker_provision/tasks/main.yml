@@ -1,0 +1,25 @@
+---
+#main.yml: docker tasks.
+  - name: Agregar Docker GPG Key
+    become: yes
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+  - name: Agregar repositorio de Docker
+    become: yes
+    apt_repository:
+      repo: deb https://download.docker.com/linux/{{ansible_distribution|lower}} {{ansible_distribution_release}} stable
+      state: present
+  - name: Actualizar cache de paquetes
+    become: yes
+    apt:
+      update_cache: yes
+  - name: Instalar docker-ce
+    become: yes
+    apt:
+      name: ['docker-ce', 'docker-ce-cli', 'containerd.io']
+      state: present
+  - name: Eliminar cache
+    become: yes
+    apt:
+      autoclean: yes
