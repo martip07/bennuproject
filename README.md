@@ -11,7 +11,7 @@ Repositorio para las pruebas de bennu.
 
 ### Pasos para la actividad 1.
 
-#### Requerimientos:
+##### Requerimientos:
 
 <ul>
 <li>Instalar Terraform</li>
@@ -19,7 +19,7 @@ Repositorio para las pruebas de bennu.
 <li>IAM User debe tener permisos en EC2</li>
 </ul>
 
-#### Variables de entorno:
+##### Variables de entorno:
 
 <ul>
 <li><code>export TF_VAR_aws_ak="AWS ACCESS KEY"</code></li>
