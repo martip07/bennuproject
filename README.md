@@ -5,7 +5,7 @@ Repositorio para las pruebas de bennu.
 
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
 - [x] Provisionar docker-engine con ansible en tu máquina virtual creada
-- [ ] Desplegar el container de kong-ce sobre la máquina virtual.
+- [x] Desplegar el container de kong-ce sobre la máquina virtual.
 - [x] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
@@ -122,4 +122,4 @@ El comando que se ejecuta primero se conecta a los servidores que estan en el ar
 
 Se puede verificar en: EC-IP-PUBLICA:9000/api/hello
 
-![hellobennugo](https://minecraftbox-extras.s3.amazonaws.com/output-task-4.png)
+![hellobennugo](https://minecraftbox-extras.s3.amazonaws.com/output-task-4.jpg)
