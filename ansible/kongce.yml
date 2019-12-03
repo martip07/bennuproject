@@ -1,0 +1,7 @@
+---
+#kongce.yml: playbook for task two
+- hosts: localhost
+  connection: local
+  roles:
+    - aws_inventory
+   # - kong-ce_container
