@@ -9,7 +9,7 @@ Repositorio para las pruebas de bennu.
 - [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
-### Crear una máquina virtual con terraform sobre el free tier de AWS.
+### Pasos para la actividad 1.
 
 #### Requerimientos:
 
