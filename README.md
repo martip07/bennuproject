@@ -54,6 +54,15 @@ Repositorio para las pruebas de bennu.
 
 Son los mismos pasos que se ejecutaron para la primera actividad ya que solo se usa Ansible para instalar y configurar Docker.
 
+#### Variables de entorno:
+
+<ul>
+<li><code>export TF_VAR_ec2_key_pub="Llave Pública"</code></li>
+<li><code>export TF_VAR_ec2_key_priv="Llave privada"</code></li>
+</ul>
+
+La llave publica y privada que se usaran para gestinar los recursos creados en AWS EC2 con Ansible.
+
 #### Verificar:
 
 Si todo se ejecuto correctamente se va a tener un output parecido a:
