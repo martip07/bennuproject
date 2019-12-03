@@ -1,5 +1,5 @@
 ---
-#kongce.yml: playbook for task two
+#kongce.yml: playbook for kong-ce prov.
 - hosts: all
   gather_facts: false
   user: ubuntu

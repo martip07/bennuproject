@@ -3,6 +3,5 @@
 - hosts: localhost
   connection: local
   roles:
-    #- server_dependencies
-    #- docker_provision
-    - infra_facts
+    - server_dependencies
+    - docker_provision

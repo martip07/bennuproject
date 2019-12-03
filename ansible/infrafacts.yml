@@ -1,0 +1,6 @@
+---
+#infratask.yml: playbook for priv key
+- hosts: localhost
+  connection: local
+  roles:
+    - infra_facts
