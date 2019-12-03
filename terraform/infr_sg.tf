@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg_general" {
-  name        = "sg_general_uat"
+  name        = "${var.ec2_sg_name}"
   description = "General security group"
 
   ingress {
@@ -11,7 +11,6 @@ resource "aws_security_group" "sg_general" {
   }
 
   tags = {
-    Name = "sg_general_uat"
-    Env  = "uat"
+    Name = "${var.ec2_sg_name}"
   }
 }

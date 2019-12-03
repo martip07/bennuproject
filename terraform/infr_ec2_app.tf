@@ -4,7 +4,6 @@ resource "aws_instance" "uat-appserver" {
   vpc_security_group_ids = "${aws_security_group.sg_general.*.id}"
 
   tags = {
-    Name = "uat-appserver-env"
-    Env  = "uat"
+    Name = "${var.ec2_name}"
   }
 }
