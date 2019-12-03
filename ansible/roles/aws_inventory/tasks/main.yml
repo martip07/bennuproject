@@ -1,0 +1,3 @@
+#main.yml: aws ec2 inventory.
+- name: EC2 inventario
+  shell: aws ec2 describe-instances --region {{ lookup('env','TF_VAR_aws_region') }} --filters "Name=tag:Name,Values={{ lookup('env','TF_VAR_ec2_name') }}" "Name=instance-state-name,Values=running"  --query "Reservations[].Instances[].[PublicIpAddress]" --output text > $PWD/awshosts

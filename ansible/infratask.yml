@@ -1,0 +1,7 @@
+---
+#infratask.yml: playbook for task two
+- hosts: localhost
+  connection: local
+  roles:
+    - server_dependencies
+    - docker_provision

@@ -1,0 +1,11 @@
+---
+#main.yml: server dependencies and extras.
+  - name: Actualizar cache de paquetes
+    become: yes
+    apt:
+      update_cache: yes
+  - name: Instalar paquetes necesarios para docker-ce
+    become: yes
+    apt:
+      name: ['apt-transport-https', 'ca-certificates', 'curl', 'gnupg-agent', 'software-properties-common']
+      state: present
