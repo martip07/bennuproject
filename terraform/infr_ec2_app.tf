@@ -47,7 +47,6 @@ resource "aws_instance" "uat-appserver" {
   }
 
   tags = {
-    Name = "uat-appserver-env"
-    Env  = "uat"
+    Name = "${var.ec2_name}"
   }
 }
