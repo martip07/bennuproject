@@ -5,7 +5,7 @@ Repositorio para las pruebas de bennu.
 
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
 - [x] Provisionar docker-engine con ansible en tu máquina virtual creada
-- [ ] Desplegar el container de kong-ce sobre la máquina virtual.
+- [x] Desplegar el container de kong-ce sobre la máquina virtual.
 - [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
