@@ -95,7 +95,7 @@ En estas nuevas variables de entorno solo se asignan los varoles previamente asi
 <ol>
 <li>ansible-playbook ./infrafacts.yml -v</li>
 <li>ansible-playbook ./inventoryaws.yml  -v</li>
-<li>ansible-playbook -i awshosts ./kongce.yml -v </li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./kongce.yml -v </li>
 </ol>
 
 - El primer comando va a generar la llave privada usando la variables de entorno TF_VAR_ec2_key_priv
@@ -110,7 +110,7 @@ Se repite lo mismo que en la actividad 1, 2 y 3 solo que ahora se agregan uno pa
 ##### Pasos a seguir:
 
 <ol>
-<li>ansible-playbook -i awshosts ./apitask.yml -v v</li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./apitask.yml -v v</li>
 </ol>
 
 El comando que se ejecuta primero se conecta a los servidores que estan en el archivo awshosts. Luego descarga la imagen del servicio rest hellobennugo (Se uso Go). Por ultimo se agrega el servicio y ruta a kong.
@@ -123,3 +123,26 @@ El comando que se ejecuta primero se conecta a los servidores que estan en el ar
 Se puede verificar en: EC-IP-PUBLICA:9000/api/hello
 
 ![hellobennugo](https://minecraftbox-extras.s3.amazonaws.com/output-task-4.jpg)
+
+### Pasos para la actividad 5 (Script para automatizar tareas)
+
+Es un script que automatiza la gestion de configuracion de la mayoria de variables y actividades.
+
+*(El script no cubre la opción para eliminar todo lo que se tiene (PENDIENTE) asi que se debe de eliminar manualmente).*
+
+##### Variables Obligatorias a configurar:
+
+<ul>
+<li><code>export TF_VAR_ec2_key_pub="Llave Pública"</code></li>
+<li><code>export TF_VAR_ec2_key_priv="Llave privada"</code></li>
+</ul>
+
+##### Pasos a seguir:
+
+<ul>
+<li>sh bennuscripts.sh</li>
+<li>Agregar las variables que solicita.</li>
+<li>Prepara un cafe ☕ y espera un momento.</li>
+</ul>
+
+*(Si desean eliminar todo lo que tienen y quieren usar terraform solo configuren las variables de entorno y ejecuten terraform destroy en la carpeta terraform).*
