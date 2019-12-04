@@ -95,7 +95,7 @@ En estas nuevas variables de entorno solo se asignan los varoles previamente asi
 <ol>
 <li>ansible-playbook ./infrafacts.yml -v</li>
 <li>ansible-playbook ./inventoryaws.yml  -v</li>
-<li>ansible-playbook -i awshosts ./kongce.yml -v </li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./kongce.yml -v </li>
 </ol>
 
 - El primer comando va a generar la llave privada usando la variables de entorno TF_VAR_ec2_key_priv
@@ -110,7 +110,7 @@ Se repite lo mismo que en la actividad 1, 2 y 3 solo que ahora se agregan uno pa
 ##### Pasos a seguir:
 
 <ol>
-<li>ansible-playbook -i awshosts ./apitask.yml -v v</li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./apitask.yml -v v</li>
 </ol>
 
 El comando que se ejecuta primero se conecta a los servidores que estan en el archivo awshosts. Luego descarga la imagen del servicio rest hellobennugo (Se uso Go). Por ultimo se agrega el servicio y ruta a kong.
