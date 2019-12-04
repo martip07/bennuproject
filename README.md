@@ -95,7 +95,7 @@ En estas nuevas variables de entorno solo se asignan los varoles previamente asi
 <ol>
 <li>ansible-playbook ./infrafacts.yml -v</li>
 <li>ansible-playbook ./inventoryaws.yml  -v</li>
-<li>ansible-playbook -i awshosts ./kongce.yml -v </li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./kongce.yml -v </li>
 </ol>
 
 - El primer comando va a generar la llave privada usando la variables de entorno TF_VAR_ec2_key_priv
