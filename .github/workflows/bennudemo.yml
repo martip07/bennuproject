@@ -48,6 +48,7 @@ jobs:
         TF_VAR_ec2_ami_id: ${{ secrets.var_ec2_ami_id }}
         TF_VAR_ec2_sg_name: ${{ secrets.var_ec2_sg_name }}
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
+        TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task plan
       uses: hashicorp/terraform-github-actions@master
       with:
@@ -62,6 +63,7 @@ jobs:
         TF_VAR_ec2_ami_id: ${{ secrets.var_ec2_ami_id }}
         TF_VAR_ec2_sg_name: ${{ secrets.var_ec2_sg_name }}
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
+        TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task apply
       uses: hashicorp/terraform-github-actions@master
       with:
@@ -76,3 +78,4 @@ jobs:
         TF_VAR_ec2_ami_id: ${{ secrets.var_ec2_ami_id }}
         TF_VAR_ec2_sg_name: ${{ secrets.var_ec2_sg_name }}
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
+        TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
