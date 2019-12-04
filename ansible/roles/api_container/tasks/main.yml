@@ -1,0 +1,18 @@
+---
+#main.yml: api containter tasks.
+  - name: Pull api image
+    become: yes
+    docker_image:
+      name: "martip07/hellobennugo"
+      source: pull
+  - name: Create api container
+    become: yes
+    docker_container:
+      name: apigo
+      hostname: apigo-service
+      image: "martip07/hellobennugo"
+      state: started
+      networks:
+        - name: "kong-net"
+      ports:
+       - "8088:8088"

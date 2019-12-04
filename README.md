@@ -6,7 +6,7 @@ Repositorio para las pruebas de bennu.
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
 - [x] Provisionar docker-engine con ansible en tu máquina virtual creada
 - [x] Desplegar el container de kong-ce sobre la máquina virtual.
-- [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
+- [x] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
 
 ### Pasos para la actividad 1.
@@ -101,3 +101,25 @@ En estas nuevas variables de entorno solo se asignan los varoles previamente asi
 - El primer comando va a generar la llave privada usando la variables de entorno TF_VAR_ec2_key_priv
 - El segundo comando va a generar un archivo (awshosts) con la lista de IPs públicas que tengan el tag Name que se asigno a la variable TF_VAR_ec2_name.
 - El tercer comando, se le pasa como listo de host el archivo previamente creado y se comienza a ejecutar las tareas necesarias para que se tenga activado un contenedor con kong (red, base de datos y contenedor para la app).
+
+### Pasos para la actividad 4 (Docker hello api - kong-ce)
+
+Se repite lo mismo que en la actividad 1, 2 y 3 solo que ahora se agregan uno pasos y requerimientos adicionales.
+*(No tienen que usar el comando terraform destroy ya que se van a necesitar los recursos creados).*
+
+##### Pasos a seguir:
+
+<ol>
+<li>ansible-playbook -i awshosts ./apitask.yml -v v</li>
+</ol>
+
+El comando que se ejecuta primero se conecta a los servidores que estan en el archivo awshosts. Luego descarga la imagen del servicio rest hellobennugo (Se uso Go). Por ultimo se agrega el servicio y ruta a kong.
+
+- Docker Repo: https://hub.docker.com/r/martip07/hellobennugo
+- Github Repo: https://github.com/martip07/hellobennugo
+
+##### Verificar:
+
+Se puede verificar en: EC-IP-PUBLICA:9000/api/hello
+
+![hellobennugo](https://minecraftbox-extras.s3.amazonaws.com/output-task-4.jpg)
