@@ -26,13 +26,13 @@ jobs:
       run: |
         pip3 install awscli
         pip3 install ansible
-    - name: Terraform Task init:
+    - name: Terraform Task init
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
         tf_actions_subcommand: 'init'
         tf_actions_working_dir: './terraform'
-    - name: Terraform Task validate:
+    - name: Terraform Task validate
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
@@ -46,7 +46,7 @@ jobs:
         TF_VAR_ec2_ami_id: ${{ secrets.var_ec2_ami_id }}
         TF_VAR_ec2_sg_name: ${{ secrets.var_ec2_sg_name }}
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
-    - name: Terraform Task plan:
+    - name: Terraform Task plan
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
@@ -60,7 +60,7 @@ jobs:
         TF_VAR_ec2_ami_id: ${{ secrets.var_ec2_ami_id }}
         TF_VAR_ec2_sg_name: ${{ secrets.var_ec2_sg_name }}
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
-    - name: Terraform Task plan:
+    - name: Terraform Task apply
       uses: hashicorp/terraform-github-actions@master
       with:
         tf_actions_version: 0.12.13
