@@ -123,3 +123,26 @@ El comando que se ejecuta primero se conecta a los servidores que estan en el ar
 Se puede verificar en: EC-IP-PUBLICA:9000/api/hello
 
 ![hellobennugo](https://minecraftbox-extras.s3.amazonaws.com/output-task-4.jpg)
+
+### Pasos para la actividad 5 (Script para automatizar tareas)
+
+Es un script que automatiza la gestion de configuracion de la mayoria de variables y actividades.
+
+*(El script no cubre la opción para eliminar todo lo que se tiene (PENDIENTE) asi que se debe de eliminar manualmente).*
+
+##### Variables Obligatorias a configurar:
+
+<ul>
+<li><code>export TF_VAR_ec2_key_pub="Llave Pública"</code></li>
+<li><code>export TF_VAR_ec2_key_priv="Llave privada"</code></li>
+</ul>
+
+##### Pasos a seguir:
+
+<ul>
+<li>sh bennuscripts.sh</li>
+<li>Agregar las variables que solicita.</li>
+<li>Prepara un cafe ☕ y espera un momento.</li>
+</ul>
+
+*(Si desean eliminar todo lo que tienen y quieren usar terraform solo configuren las variables de entorno y ejecuten terraform destroy en la carpeta terraform).*
