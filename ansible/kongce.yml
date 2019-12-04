@@ -1,7 +1,9 @@
 ---
 #kongce.yml: playbook for task two
-- hosts: localhost
-  connection: local
+- hosts: all
+  gather_facts: false
+  user: ubuntu
+  vars:
+    ansible_ssh_private_key_file: /tmp/deployguy
   roles:
-    - aws_inventory
-   # - kong-ce_container
+    - kong-ce_container

@@ -4,7 +4,7 @@ Repositorio para las pruebas de bennu.
 ## Lista de actividades:
 
 - [x] Crear una máquina virtual con terraform sobre el free tier de AWS.
-- [ ] Provisionar docker-engine con ansible en tu máquina virtual creada
+- [x] Provisionar docker-engine con ansible en tu máquina virtual creada
 - [ ] Desplegar el container de kong-ce sobre la máquina virtual.
 - [ ] Buscar o codificar un servicio que retorne un mensaje (HelloWorld), luego Dockerizar la app y crear un API en kong que haga una llamada al servicio.
 - [ ] Hacer un script que ejecute los cuatro puntos anteriores.
@@ -15,6 +15,7 @@ Repositorio para las pruebas de bennu.
 
 <ul>
 <li>Instalar Terraform</li>
+<li>Instalar Ansible</li>
 <li>ACCESS y SECRET KEY de una cuenta en AWS</li>
 <li>IAM User debe tener permisos en EC2</li>
 </ul>
@@ -49,7 +50,20 @@ Repositorio para las pruebas de bennu.
 </ul>
 </ol>
 
-#### Verificar:
+### Pasos para la actividad 2 (Ansible)
+
+Son los mismos pasos que se ejecutaron para la primera actividad ya que solo se usa Ansible para instalar y configurar Docker.
+
+##### Variables de entorno:
+
+<ul>
+<li><code>export TF_VAR_ec2_key_pub="Llave Pública"</code></li>
+<li><code>export TF_VAR_ec2_key_priv="Llave privada"</code></li>
+</ul>
+
+La llave publica y privada que se usaran para gestinar los recursos creados en AWS EC2 con Ansible.
+
+##### Verificar:
 
 Si todo se ejecuto correctamente se va a tener un output parecido a:
 
