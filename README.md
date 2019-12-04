@@ -110,7 +110,7 @@ Se repite lo mismo que en la actividad 1, 2 y 3 solo que ahora se agregan uno pa
 ##### Pasos a seguir:
 
 <ol>
-<li>ansible-playbook -i awshosts ./apitask.yml -v v</li>
+<li>ansible-playbook --ssh-common-args='-o StrictHostKeyChecking=no' -i awshosts ./apitask.yml -v v</li>
 </ol>
 
 El comando que se ejecuta primero se conecta a los servidores que estan en el archivo awshosts. Luego descarga la imagen del servicio rest hellobennugo (Se uso Go). Por ultimo se agrega el servicio y ruta a kong.
