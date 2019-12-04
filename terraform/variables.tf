@@ -26,6 +26,7 @@ variable "ec2_name" {
 variable "ec2_sg_name" {
   type        = string
   description = "Variable en la que se define el nombre del grupo de seguridad"
+}
 
 variable "ec2_key_pub" {
   type        = string

@@ -30,3 +30,5 @@ override.tf.json
 
 # App
 .vscode
+*awshosts*
+*demo*
