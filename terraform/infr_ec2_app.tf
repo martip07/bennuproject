@@ -17,7 +17,7 @@ resource "aws_instance" "uat-appserver" {
       type = "ssh"
       user = "ubuntu"
       host = self.public_ip
-      private_key = "${file("/tmp/tempkey")}"
+      private_key = "${file("~/tempkey")}"
     }
   }
 
