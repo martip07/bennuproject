@@ -30,9 +30,9 @@ jobs:
         pip3 install ansible
     - name: Create key
       run: |
-        echo $TF_VAR_ec2_key_priv > ~/tempkey
-        chmod 600 ~/tempkey
-        ls -l ~/
+        echo $TF_VAR_ec2_key_priv > /tmp/tempkey
+        chmod 600 /tmp/tempkey
+        ls -l /tmp/
       env:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task init
