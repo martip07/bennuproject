@@ -16,6 +16,8 @@ jobs:
       run: sudo apt-get update
     - name: Install dependencies
       run: |
+        sudo apt-get install -y wget
+        sudo apt-get install -y unzip
         sudo apt-get install -y python3
         sudo apt-get install -y python3-pip
         sudo apt-get install -y python
@@ -28,6 +30,15 @@ jobs:
       run: |
         pip3 install awscli
         pip3 install ansible
+    - name: Install Terraform
+      run: |
+        cd /opt/
+        sudo wget https://releases.hashicorp.com/terraform/0.12.17/terraform_0.12.17_linux_amd64.zip
+        sudo unzip terraform_0.12.17_linux_amd64.zip
+        sudo cp -f ./terraform /usr/local/bin
+        sudo cp -f ./terraform /bin
+      env:
+        TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Create key
       run: |
         echo $TF_VAR_ec2_key_priv > ./terraform/tempkey
@@ -36,17 +47,11 @@ jobs:
       env:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task init
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.13
-        tf_actions_subcommand: 'init'
-        tf_actions_working_dir: './terraform'
+      run: |
+        cd terraform && terraform init
     - name: Terraform Task validate
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.13
-        tf_actions_subcommand: 'validate'
-        tf_actions_working_dir: './terraform'
+      run: |
+        terraform validate
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
@@ -57,11 +62,8 @@ jobs:
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task plan
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.13
-        tf_actions_subcommand: 'plan'
-        tf_actions_working_dir: './terraform'
+      run: |
+        terraform plan
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
@@ -72,11 +74,8 @@ jobs:
         TF_VAR_ec2_key_pub: ${{ secrets.var_ec2_key_pub }}
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task apply
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.13
-        tf_actions_subcommand: 'apply'
-        tf_actions_working_dir: './terraform'
+      run: |
+        terraform apply -auto-approve
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
