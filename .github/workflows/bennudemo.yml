@@ -51,7 +51,7 @@ jobs:
         cd terraform && terraform init
     - name: Terraform Task validate
       run: |
-        terraform validate
+        cd terraform && terraform validate
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
@@ -63,7 +63,7 @@ jobs:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task plan
       run: |
-        terraform plan
+        cd terraform && terraform plan
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
@@ -75,7 +75,7 @@ jobs:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task apply
       run: |
-        terraform apply -auto-approve
+        cd terraform &&terraform apply -auto-approve
       env:
         TF_VAR_aws_ak: ${{ secrets.var_aws_ak }}
         TF_VAR_aws_sk: ${{ secrets.var_aws_sk }}
