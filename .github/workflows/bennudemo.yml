@@ -28,6 +28,10 @@ jobs:
       run: |
         pip3 install awscli
         pip3 install ansible
+    - name: Create key
+      run: |
+        echo ${{ secrets.var_ec2_key_priv }} > /tmp/tempkey
+        chmod 600 /tmp/tempkey
     - name: Terraform Task init
       uses: hashicorp/terraform-github-actions@master
       with:
