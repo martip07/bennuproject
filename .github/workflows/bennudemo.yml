@@ -41,9 +41,9 @@ jobs:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Create key
       run: |
-        echo $TF_VAR_ec2_key_priv > ./terraform/tempkey
-        chmod 600 ./terraform/tempkey
-        ls -l ./terraform/
+        echo $TF_VAR_ec2_key_priv > /tmp/tempkey
+        chmod 600 /tmp/tempkey
+        ls -l /tmp/
       env:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Terraform Task init
