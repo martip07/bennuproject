@@ -41,8 +41,8 @@ jobs:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
     - name: Create key
       run: |
-        echo $TF_VAR_ec2_key_priv > /tmp/tempkey
-        chmod 600 /tmp/tempkey
+        echo $TF_VAR_ec2_key_priv > /tmp/id_rsa
+        chmod 600 /tmp/id_rsa
         ls -l /tmp/
       env:
         TF_VAR_ec2_key_priv: ${{ secrets.var_ec2_key_priv }}
